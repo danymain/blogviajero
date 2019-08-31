@@ -67,13 +67,20 @@ CABECERA
 				</a>
 
 			</div>
+			<?php 
 
+				if(is_active_sidebar("widgets-redes-sociales")){ 
+
+					dynamic_sidebar("widgets-redes-sociales"); 
+				}
+
+			?>
 			<!-- REDES SOCIALES -->
 			<div class="d-none d-md-block col-md-2 col-lg-2 redes">
 				
 				<ul class="d-flex justify-content-end pt-2 mt-1">
 					
-					<li>
+					<!-- <li>
 						<a href="https://www.facebook.com" target="_blank">
 							<i class="fab fa-facebook-f lead rounded-circle text-white mr-1"></i>
 						</a>
@@ -101,7 +108,7 @@ CABECERA
 						<a href="#" target="_blank">
 							<i class="fab fa-snapchat-ghost lead rounded-circle text-white mr-1"></i>
 						</a>
-					</li>
+					</li> -->
 
 				</ul>
 
@@ -158,7 +165,7 @@ REDES SOCIALES PARA MÓVIL
 				
 	<ul class="d-flex justify-content-center p-0">
 		
-		<li>
+		<!-- <li>
 			<a href="https://www.facebook.com" target="_blank">
 				<i class="fab fa-facebook-f lead rounded-circle text-white mr-3 mr-sm-4"></i>
 			</a>
@@ -186,7 +193,7 @@ REDES SOCIALES PARA MÓVIL
 			<a href="#" target="_blank">
 				<i class="fab fa-snapchat-ghost lead rounded-circle text-white mr-3 mr-sm-4"></i>
 			</a>
-		</li>
+		</li> -->
 
 	</ul>
 

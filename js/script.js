@@ -304,3 +304,52 @@ for(var i = 0; i < avatar.length; i++){
 
 	$(vcard[0]).css({"width":"98px"});
 }
+/*=============================================
+REDES SOCIALES
+=============================================*/
+
+var menuSocial = $("#menu-social li");
+
+var redes = $(".redes ul");
+var redesMovil = $(".redesMovil ul");
+var redesFooter = $(".redesFooter ul");
+
+for(var i = 0; i < menuSocial.length; i++){	
+
+	if(window.matchMedia("(max-width:767px)").matches){
+
+		$(menuSocial[i]).appendTo($(redesMovil));
+
+	}else{
+
+		$(menuSocial[i]).appendTo($(redes));
+		$(menuSocial[i]).appendTo($(redesFooter));
+	}
+
+	var linkRedes = $(".redes ul li a");
+	var linkRedesMovil = $(".redesMovil ul li a");
+	var linkRedesFooter = $(".redesFooter ul li a");
+	$(linkRedes[i]).css({"padding":"5px"})
+	$(linkRedesMovil[i]).css({"padding":"5px"})
+	// $(linkRedesFooter[i]).css({"padding":"5px"})
+
+}
+
+$(".redes ul li a[href*='facebook']").html('<i class="fab fa-facebook-f lead rounded-circle text-white"></i>')
+$(".redes ul li a[href*='instagram']").html('<i class="fab fa-instagram lead rounded-circle text-white"></i>')
+$(".redes ul li a[href*='twitter']").html('<i class="fab fa-twitter lead rounded-circle text-white mr-1"></i>')
+$(".redes ul li a[href*='youtube']").html('<i class="fab fa-youtube lead rounded-circle text-white"></i>')
+$(".redes ul li a[href*='snapchat']").html('<i class="fab fa-snapchat-ghost lead rounded-circle text-white"></i>')
+
+$(".redesMovil ul li a[href*='facebook']").html('<i class="fab fa-facebook-f lead rounded-circle text-white mr-3 mr-sm-4"></i>')
+$(".redesMovil ul li a[href*='instagram']").html('<i class="fab fa-instagram lead rounded-circle text-white mr-3 mr-sm-4"></i>')
+$(".redesMovil ul li a[href*='twitter']").html('<i class="fab fa-twitter lead rounded-circle text-white mr-3 mr-sm-4"></i>')
+$(".redesMovil ul li a[href*='youtube']").html('<i class="fab fa-youtube lead rounded-circle text-white mr-3 mr-sm-4"></i>')
+$(".redesMovil ul li a[href*='snapchat']").html('<i class="fab fa-snapchat-ghost lead rounded-circle text-white mr-3 mr-sm-4"></i>')
+
+$(".redesFooter ul li a[href*='facebook']").html('<i class="fab fa-facebook-f lead rounded-circle text-white"></i>')
+$(".redesFooter ul li a[href*='instagram']").html('<i class="fab fa-instagram lead rounded-circle text-white"></i>')
+$(".redesFooter ul li a[href*='twitter']").html('<i class="fab fa-twitter lead rounded-circle text-white"></i>')
+$(".redesFooter ul li a[href*='youtube']").html('<i class="fab fa-youtube lead rounded-circle text-white"></i>')
+$(".redesFooter ul li a[href*='snapchat']").html('<i class="fab fa-snapchat-ghost lead rounded-circle text-white"></i>')
+

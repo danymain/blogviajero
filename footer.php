@@ -84,11 +84,11 @@
 
 				</div>
 
-				<div class="p-0 w-100 pt-2">
+				<div class="p-0 w-100 pt-2 redesFooter">
 				
 					<ul class="d-flex justify-content-left p-0">
 						
-						<li>
+						<!-- <li>
 							<a href="https://www.facebook.com" target="_blank">
 								<i class="fab fa-facebook-f lead text-white mr-3 mr-sm-4"></i>
 							</a>
@@ -116,7 +116,7 @@
 							<a href="#" target="_blank">
 								<i class="fab fa-snapchat-ghost lead text-white mr-3 mr-sm-4"></i>
 							</a>
-						</li>
+						</li> -->
 
 					</ul>
 

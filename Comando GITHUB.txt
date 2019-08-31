@@ -1,0 +1,68 @@
+Comandos de GIT 
+
+git init (para iniciar git)
+git add <file>
+git status
+git commit 
+git push 
+git pull
+git clone (para clonar un proyecto) 
+git log
+git checkout -- <file> (para deshacer un cambio en un archivo )
+
+Para subir o actualizar documentos en GITHUB
+
+git commit -m "comentario de lo que se hizo"
+git remote add origin https://github.com/danymain/Mi-primer-proyecto
+git push -u origin master
+
+
+git push --force origin master (para forzar y guardar en github)
+
+
+
+para generar un componente 
+
+ng generate component <nombre del componente>
+******************************************************
+PROCESO PARA BORRAR UN ARCHIVO Y ACTUALIZAR EN PC Y REMOTAMENTE EN GIT HUB
+
+Borrar los archivos del repositorio
+El primer paso sería eliminar esos archivos del repositorio. Para eso está el comando "rm". Sin embargo, ese comando tal cual, sin los parámetros adecuados, borrará el archivo también de nuestro directorio de trabajo, lo que es posible que no desees.
+
+Si quieres que el archivo permanezca en tu ordenador pero simplemente que se borre del repostorio tienes que hacerlo así.
+
+git rm --cached nombre_archivo
+Si lo que deseas es borrar un directorio y todos sus contenidos, tendrás que hacer algo así:
+
+git rm -r --cached nombre_directorio
+El parámetro "--cached" es el que nos permite mantener los archivos en nuestro directorio de trabajo.
+
+Asegurarse que estamos ignorando los archivos con .gitignore
+Luego se trataría de asegurarse que nuestros archivos se encuentran correctamente ignorados, para que no los volvamos a meter en el repositorio cuando confirmemos cambios más adelante con commit.
+
+Esto lo tienes que hacer en el archivo .gitignore y ya lo hemos explicado anteriormente, por lo que te recomiendo leer el artículo sobre .gitignore.
+
+Hacer el commit para confirmar los cambios
+Una vez hemos quitado del repositorio los archivos que no queremos, y ahora sí están ignorados, tenemos que confirmar los cambios. Esta operación hará que ese archivo o esa carpeta desaparezca del estado actual de la rama de nuestro repositorio.
+
+git commit -m 'Eliminados archivos no deseados'
+Enviar esos cambios al repositorio remoto
+Como último paso, en el caso que tengas un repositorio remoto donde envías tu código (GitHub o similar), tendrás que trasladar los datos allí.
+
+Esto lo haces con "push", como de costumbre.
+
+git push
+O en el caso que tengas que especificar el repositorio remoto y la rama, sería algo como:
+
+git push origin master
+***************************************************
+PROCESO PARA ACTUALIZAR UN ARCHIVO EN GITHUB 
+git add -A (para actualizar todos los archivos )
+git commit -m "mensaje de lo que se hizo"
+git push origin master 
+
+-*************************************************
+PAGINA DE CURRICULUM VITAE
+https://cvdaniel.000webhostapp.com/
+*****************************************************
