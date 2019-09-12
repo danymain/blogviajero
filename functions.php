@@ -163,3 +163,98 @@ function blogviajero_widgets() {
 }
 
 add_action( 'widgets_init', 'blogviajero_widgets' );
+
+/*=============================================
+CUSTOM POST TYPE BANNER
+=============================================*/
+// https://developer.wordpress.org/reference/functions/register_post_type/
+
+
+function blogviajero_banner() {
+
+    $labels = array(
+        'name'               => _x( 'Banner', 'blogviajero' ),
+        'singular_name'      => _x( 'Banner', 'post type singular name', 'blogviajero' ),
+        'menu_name'          => _x( 'Banner', 'admin menu', 'blogviajero' ),
+        'name_admin_bar'     => _x( 'Banner', 'add new on admin bar', 'blogviajero' ),
+        'add_new'            => _x( 'Add New', 'book', 'blogviajero' ),
+        'add_new_item'       => __( 'Add New Banner', 'blogviajero' ),
+        'new_item'           => __( 'New Banner', 'blogviajero' ),
+        'edit_item'          => __( 'Edit Banner', 'blogviajero' ),
+        'view_item'          => __( 'View Banner', 'blogviajero' ),
+        'all_items'          => __( 'All Banner', 'blogviajero' ),
+        'search_items'       => __( 'Search Banner', 'blogviajero' ),
+        'parent_item_colon'  => __( 'Parent Banner:', 'blogviajero' ),
+        'not_found'          => __( 'No Banner found.', 'blogviajero' ),
+        'not_found_in_trash' => __( 'No Banner found in Trash.', 'blogviajero' )
+
+   );
+
+   $args = array(
+       'labels'             => $labels,
+       'description'        => __( 'Description.', 'blogviajero' ),
+       'public'             => true,
+       'publicly_queryable' => true,
+       'show_ui'            => true,
+       'show_in_menu'       => true,
+       'query_var'          => true,
+       'rewrite'            => array( 'slug' => 'banner' ),
+       'capability_type'    => 'post',
+       'has_archive'        => true,
+       'hierarchical'       => false,
+       'menu_position'      => 6,
+       'supports'           => array( 'title', 'editor', 'thumbnail' ),
+       'taxonomies'          => array( 'category' )
+
+   );
+
+   register_post_type( 'banner', $args );
+}
+
+add_action( 'init', 'blogviajero_banner' );
+
+/*=============================================
+CUSTOM POST TYPE GRID
+=============================================*/
+
+function blogviajero_grid() {
+
+    $labels = array(
+        'name'               => _x( 'Grid', 'blogviajero' ),
+        'singular_name'      => _x( 'Grid', 'post type singular name', 'blogviajero' ),
+        'menu_name'          => _x( 'Grid', 'admin menu', 'blogviajero' ),
+        'name_admin_bar'     => _x( 'Grid', 'add new on admin bar', 'blogviajero' ),
+        'add_new'            => _x( 'Add New', 'book', 'blogviajero' ),
+        'add_new_item'       => __( 'Add New Grid', 'blogviajero' ),
+        'new_item'           => __( 'New Grid', 'blogviajero' ),
+        'edit_item'          => __( 'Edit Grid', 'blogviajero' ),
+        'view_item'          => __( 'View Grid', 'blogviajero' ),
+        'all_items'          => __( 'All Grid', 'blogviajero' ),
+        'search_items'       => __( 'Search Grid', 'blogviajero' ),
+        'parent_item_colon'  => __( 'Parent Grid:', 'blogviajero' ),
+        'not_found'          => __( 'No Grid found.', 'blogviajero' ),
+        'not_found_in_trash' => __( 'No Grid found in Trash.', 'blogviajero' )
+
+   );
+
+   $args = array(
+       'labels'             => $labels,
+       'description'        => __( 'Description.', 'blogviajero' ),
+       'public'             => true,
+       'publicly_queryable' => true,
+       'show_ui'            => true,
+       'show_in_menu'       => true,
+       'query_var'          => true,
+       'rewrite'            => array( 'slug' => 'grid' ),
+       'capability_type'    => 'post',
+       'has_archive'        => true,
+       'hierarchical'       => false,
+       'menu_position'      => 6,
+       'supports'           => array( 'title' )
+
+   );
+
+   register_post_type( 'grid', $args );
+}
+
+add_action( 'init', 'blogviajero_grid' );

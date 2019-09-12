@@ -52,7 +52,8 @@ CABECERA
 		<div class="row">
 			
 			<!-- LOGO -->
-			<div class="col-10 col-sm-11 col-md-8 col-lg-7 pt-1 pt-lg-3 p-xl-0 logotipo">
+			<div class="col-10 col-sm-11 col-md-8 col-lg-7 pt-1 pt-lg-3 p-xl-0 mt-1 mt-md-2 logotipo">
+
 				
 				<a href="<?php echo esc_url(home_url("/")); ?>">
 					
@@ -76,7 +77,7 @@ CABECERA
 
 			?>
 			<!-- REDES SOCIALES -->
-			<div class="d-none d-md-block col-md-2 col-lg-2 redes">
+			<div class="d-none d-md-block col-md-2 col-lg-3 redes">
 				
 				<ul class="d-flex justify-content-end pt-2 mt-1">
 					
@@ -115,11 +116,11 @@ CABECERA
 			</div>
 
 			<!-- BUSCADOR Y BOTÓN MENÚ -->
-			<div class="col-2 col-sm-1 col-md-2 col-lg-2 d-flex justify-content-end pt-2 mt-1">
+			<div class="col-2 col-sm-1 col-md-2 col-lg-2 d-flex justify-content-end pt-2 mt-1 mt-md-3">
 				
 				<!-- BUSCADOR -->
-				<div class="d-none d-md-block pr-4 pr-lg-5 mt-1">
-					<i class="fas fa-search lead" data-toggle="collapse" data-target="#buscador"></i>
+				<div class="d-none d-md-block pr-5 mt-1">
+				<i class="fas fa-search lead" data-toggle="collapse" data-target="#buscador"></i>
 				</div>	
 
 				<!-- BOTÓN MENÚ -->
@@ -131,32 +132,30 @@ CABECERA
 
 			<!-- ENTRADA DEL BUSCADOR -->
 
-			<div id="buscador" class="collapse col-12">
-				
-				<div class="input-group float-right w-50 pl-xl-5 pb-3">
-					
-					<input type="text" class="form-control" placeholder="Buscar">
+			<?php 
 
-					<div class="input-group-append">
-						
-						<span class="input-group-text">
-							
-							<i class="fas fa-search"></i>
+if(is_active_sidebar("widgets-buscador")){ 
 
-						</span>
+		dynamic_sidebar("widgets-buscador"); 
+}
 
-					</div>
+?>
 
-				</div>
-
-			</div>
-
-		</div>
+<div id="buscador" class="collapse col-12 buscador">
+	
+	<div class="input-group float-right w-50 pl-xl-5 pb-3">
+		
+		
 
 	</div>
 
-</header>
+</div>
 
+</div>
+
+</div>
+
+</header>
 <!--=====================================
 REDES SOCIALES PARA MÓVIL
 ======================================-->

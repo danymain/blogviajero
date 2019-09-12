@@ -7,61 +7,14 @@
 		<!-- GRID CATEGORÍAS FOOTER -->
 			
 			<div class="col-md-7 col-lg-6">
+
+			<!--=====================================
+			GRID FOOTER DE CATEGORÍAS
+			======================================-->
+
+			<?php include("modules/gridFooter.php"); ?>
 				
-				<div class="p-1 bg-white gridFooter">
-
-					<div class="container p-0">
-
-						<div class="d-flex">
-
-							<div class="d-flex flex-column columna1">
-							
-								<figure class="p-2 m-0 photo1" vinculo="categorias.html">
-									
-									<p class="text-uppercase p-1 p-md-2 p-xl-1 small">Suramérica</p>
-
-								</figure>
-
-								<figure class="p-2 m-0 photo2" vinculo="categorias.html">
-									
-									<p class="text-uppercase p-1 p-md-2 p-xl-1 small">Africa</p>
-
-								</figure>								
-
-							</div>
-
-							<div class="d-flex flex-column flex-fill columna2">
-
-								<div class="d-block d-md-flex">
-
-									<figure class="p-2 m-0 flex-fill photo3" vinculo="categorias.html">
-
-										<p class="text-uppercase p-1 p-md-2 p-xl-1 small">Centromérica</p>
-										
-									</figure>
-
-									<figure class="p-2 m-0 flex-fill photo4" vinculo="categorias.html">
-										
-										<p class="text-uppercase p-1 p-md-2 p-xl-1 small">Europa</p>
-
-									</figure>
-
-								</div>
-
-								<figure class="p-2 m-0 photo5" vinculo="categorias.html">
-
-									<p class="text-uppercase p-1 p-md-2 p-xl-1 small">Norteamérica</p>
-									
-								</figure>
-
-							</div>
-
-						</div>
-
-					</div>
-
-				</div>
-					
+				
 			</div>
 
 			<div class="d-none d-lg-block col-lg-1 col-xl-2"></div>
@@ -72,52 +25,26 @@
 				
 				<h6 class="text-white">Inscríbete en nuestro newletter:</h6>
 
-				<div class="input-group my-4">
+				<?php echo do_shortcode('[optinform]'); ?>
+
+				<div class="input-group my-4 newletter">
+
+
 					
-					<input type="text" class="form-control" placeholder="Ingresa tu Email">
+					<!-- <input type="text" class="form-control" placeholder="Ingresa tu Email">
 
 					<div class="input-group-append">
 						
 						<span class="input-group-text bg-dark text-white">Inscribirse</span>
 
-					</div>
+					</div> -->
 
 				</div>
 
 				<div class="p-0 w-100 pt-2 redesFooter">
 				
-					<ul class="d-flex justify-content-left p-0">
+					<ul class="d-flex justify-content-left p-0">			
 						
-						<!-- <li>
-							<a href="https://www.facebook.com" target="_blank">
-								<i class="fab fa-facebook-f lead text-white mr-3 mr-sm-4"></i>
-							</a>
-						</li>
-
-						<li>
-							<a href="#" target="_blank">
-								<i class="fab fa-instagram lead text-white mr-3 mr-sm-4"></i>
-							</a>
-						</li>
-
-						<li>
-							<a href="#" target="_blank">
-								<i class="fab fa-twitter lead text-white mr-3 mr-sm-4"></i>
-							</a>
-						</li>
-
-						<li>
-							<a href="#" target="_blank">
-								<i class="fab fa-youtube lead text-white mr-3 mr-sm-4"></i>
-							</a>
-						</li>
-
-						<li>
-							<a href="#" target="_blank">
-								<i class="fab fa-snapchat-ghost lead text-white mr-3 mr-sm-4"></i>
-							</a>
-						</li> -->
-
 					</ul>
 
 				</div>
@@ -131,7 +58,6 @@
 </footer>
 
 <?php wp_footer(); ?>
-
 
 </body>
 </html>

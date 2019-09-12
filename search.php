@@ -1,15 +1,15 @@
-<?php get_header();?>
+<?php get_header(); ?>
 
 <!--=====================================
 BANNER
 ======================================-->
-
 
 <?php include("modules/banner-index.php"); ?>
 
 <!--=====================================
 BUSCADOR PARA MÓVIL
 ======================================-->
+
 <?php include("modules/buscador-movil.php"); ?>
 
 <!--=====================================
@@ -22,7 +22,7 @@ MENU
 CONTENIDO BLOG
 ======================================-->
 
-<div class="container-fluid bg-white contenidoInicio pb-4">
+<div class="container-fluid bg-white contenido pb-4 py-2 py-md-5">
 	
 	<div class="container">
 		
@@ -31,215 +31,98 @@ CONTENIDO BLOG
 			<!-- COLUMNA IZQUIERDA -->
 
 			<div class="col-12 col-md-8 col-lg-9 p-0 pr-lg-5">
+
+				<!-- https://developer.wordpress.org/themes/basics/the-loop/ -->
+
+				<?php 
+
+				$arrayPosts = [];
+
+				if ( have_posts() ) : ?>
+				   
+				    <?php while ( have_posts() ) : the_post(); 
+
+				    array_push($arrayPosts, get_the_ID());
+
+				    ?>
+
+				        <div class="row">
+					
+							<div class="col-12 col-lg-5">
+
+								<a href="<?php the_permalink(); ?>"><h5 class="d-block d-lg-none py-3"><?php the_title(); ?></h5></a>
+					
+								<a href="<?php the_permalink(); ?>">
+
+									<?php the_post_thumbnail('post-thumbnails', array("class"=>"img-fluid")); ?>				
+
+								</a>
+
+							</div>
+
+							<div class="col-12 col-lg-7 introArticulo">
+								
+								<a href="<?php the_permalink(); ?>"><h4 class="d-none d-lg-block"><?php the_title(); ?></h4></a>
+								
+								<p class="my-2 my-lg-5"><?php the_excerpt(); ?></p>
+
+								<a href="<?php the_permalink(); ?>" class="float-right">Leer Más</a>
+
+								<div class="fecha"><?php the_time('d.m.Y'); ?></div>
+
+							</div>
+
+
+						</div>
+
+						<hr class="mb-4 mb-lg-5" style="border: 1px solid #79FF39">
+
+				    <?php endwhile; ?>
+
+				 <?php else : ?>
+
+				 <div class="col-12 col-md-8 col-lg-9 p-0 pr-lg-5">  
+
+	                  <h1 class="my-5 text-danger">ERRROR EN BÚSQUEDA</h1>
+	                  <h3>Lo sentimos, lo que buscas no existe, vuelve a intentarlo.</h3>         
+	            </div>	
+
+				<?php endif; ?>				
 				
-				<!-- ARTÍCULO 01 -->
-
-				<div class="row">
-					
-					<div class="col-12 col-lg-5">
-
-						<a href="articulos.html"><h5 class="d-block d-lg-none py-3">Type something here</h5></a>
-			
-						<a href="articulos.html"><img src="img/articulo01.png" alt="Lorem ipsum dolor sit amet" class="img-fluid" width="100%"></a>
-
-					</div>
-
-					<div class="col-12 col-lg-7 introArticulo">
-						
-						<a href="articulos.html"><h4 class="d-none d-lg-block">Type something here</h4></a>
-						
-						<p class="my-2 my-lg-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, minus magni ipsam nisi accusantium ipsa! Incidunt neque ad, iure omnis saepe est.</p>
-
-						<a href="articulos.html" class="float-right">Leer Más</a>
-
-						<div class="fecha">30.09.2018</div>
-
-					</div>
-
-
-				</div>
-
-				<hr class="mb-4 mb-lg-5" style="border: 1px solid #79FF39">
-
-				<!-- ARTÍCULO 02 -->
-
-				<div class="row">
-					
-					<div class="col-12 col-lg-5">
-
-						<a href="articulos.html">
-
-							<h5 class="d-block d-lg-none py-3">Type something here</h5>
-
-						</a>
-			
-						<a href="articulos.html">
-
-							<img src="img/articulo02.png" alt="Lorem ipsum dolor sit amet" class="img-fluid" width="100%">
-
-						</a>
-
-					</div>
-
-					<div class="col-12 col-lg-7 introArticulo">
-						
-						<a href="articulos.html">
-
-							<h4 class="d-none d-lg-block">Type something here</h4>
-
-						</a>
-						
-						<p class="my-2 my-lg-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, minus magni ipsam nisi accusantium ipsa! Incidunt neque ad, iure omnis saepe est.</p>
-
-						<a href="articulos.html" class="float-right">Leer Más</a>
-
-						<div class="fecha">30.09.2018</div>
-
-					</div>
-
-				</div>
-
-				<hr class="mb-4 mb-lg-5" style="border: 1px solid #79FF39">
-
-				<!-- PUBLICIDAD -->
-
-				<div class="d-block d-lg-none">
-					
-					<img src="img/ad02.jpg" class="img-fluid" width="100%">
-
-				</div>
-
-				<!-- ARTÍCULO 03 -->
-
-				<div class="row">
-					
-					<div class="col-12 col-lg-5">
-
-						<a href="articulos.html">
-
-							<h5 class="d-block d-lg-none py-3">Type something here</h5>
-
-						</a>
-			
-						<a href="articulos.html">
-
-							<img src="img/articulo03.png" alt="Lorem ipsum dolor sit amet" class="img-fluid" width="100%">
-
-						</a>
-
-					</div>
-
-					<div class="col-12 col-lg-7 introArticulo">
-						
-						<a href="articulos.html">
-
-							<h4 class="d-none d-lg-block">Type something here</h4>
-
-						</a>
-						
-						<p class="my-2 my-lg-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, minus magni ipsam nisi accusantium ipsa! Incidunt neque ad, iure omnis saepe est.</p>
-
-						<a href="articulos.html" class="float-right">Leer Más</a>
-
-						<div class="fecha">30.09.2018</div>
-
-					</div>
-
-				</div>
-
-				<hr class="mb-4 mb-lg-5" style="border: 1px solid #79FF39">
-
-				<!-- ARTÍCULO 04 -->
-
-				<div class="row">
-					
-					<div class="col-12 col-lg-5">
-
-						<a href="articulos.html">
-
-							<h5 class="d-block d-lg-none py-3">Type something here</h5>
-
-						</a>
-			
-						<a href="articulos.html">
-
-							<img src="img/articulo04.png" alt="Lorem ipsum dolor sit amet" class="img-fluid" width="100%">
-
-						</a>
-
-					</div>
-
-					<div class="col-12 col-lg-7 introArticulo">
-						
-						<a href="articulos.html">
-
-							<h4 class="d-none d-lg-block">Type something here</h4>
-
-						</a>
-						
-						<p class="my-2 my-lg-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, minus magni ipsam nisi accusantium ipsa! Incidunt neque ad, iure omnis saepe est.</p>
-
-						<a href="articulos.html" class="float-right">Leer Más</a>
-
-						<div class="fecha">30.09.2018</div>
-
-					</div>
-
-				</div>
-
-				<hr class="mb-4 mb-lg-5" style="border: 1px solid #79FF39">
-
-				<!-- ARTÍCULO 05 -->
-
-				<div class="row">
-					
-					<div class="col-12 col-lg-5">
-
-						<a href="articulos.html">
-
-							<h5 class="d-block d-lg-none py-3">Type something here</h5>
-
-						</a>
-			
-						<a href="articulos.html">
-
-							<img src="img/articulo05.png" alt="Lorem ipsum dolor sit amet" class="img-fluid" width="100%">
-
-						</a>
-
-					</div>
-
-					<div class="col-12 col-lg-7 introArticulo">
-						
-						<a href="articulos.html">
-
-							<h4 class="d-none d-lg-block">Type something here</h4>
-
-						</a>
-						
-						<p class="my-2 my-lg-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, minus magni ipsam nisi accusantium ipsa! Incidunt neque ad, iure omnis saepe est.</p>
-
-						<a href="articulos.html" class="float-right">Leer Más</a>
-
-						<div class="fecha">30.09.2018</div>
-
-					</div>
-
-				</div>
-
-				<hr class="mb-4 mb-lg-5" style="border: 1px solid #79FF39">
-
 				<div class="container d-none d-md-block">
 					
-					<ul class="pagination justify-content-center"></ul>
+					<ul class="pagination justify-content-center">
+						
+						<?php echo paginate_links(); ?>
+
+					</ul>
 
 				</div>
 
-            </div>
-            
-<?php get_sidebar();?>
+				<div class="container d-block d-md-none contenidoAdicional mb-5"> 
 
-</div>
+				<?php	 
+
+					if($arrayPosts){
+						
+						$idSobrantes = implode(",", $arrayPosts);
+
+					}
+
+					echo do_shortcode('[ajax_load_more
+										button_label="Cargar Más..."
+										post__not_in="'.$idSobrantes.'"]');
+				?>
+
+				</div>
+
+			</div>
+
+			<!-- COLUMNA DERECHA -->
+
+			<?php get_sidebar(); ?>
+
+		</div>
 
 	</div>
 
@@ -248,4 +131,5 @@ CONTENIDO BLOG
 <!--=====================================
 FOOTER
 ======================================-->
-<?php get_fooder();?>
+
+<?php get_footer(); ?>

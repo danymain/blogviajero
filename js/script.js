@@ -353,3 +353,60 @@ $(".redesFooter ul li a[href*='twitter']").html('<i class="fab fa-twitter lead r
 $(".redesFooter ul li a[href*='youtube']").html('<i class="fab fa-youtube lead rounded-circle text-white"></i>')
 $(".redesFooter ul li a[href*='snapchat']").html('<i class="fab fa-snapchat-ghost lead rounded-circle text-white"></i>')
 
+/*=============================================
+BUSCADOR
+=============================================*/
+
+$("#searchform label").hide();
+$("#searchform").css({"width":"100%"});
+$("#searchform").attr("target","_parent");
+$("#searchform div input[type='text']").addClass("form-control");
+$("#searchform div input[type='text']").css({"position":"relative"});
+$("#searchform div input[type='text']").attr("placeholder","Buscar")
+
+$("#searchform").appendTo($(".buscador .input-group"));
+
+/*=============================================
+BANNER
+=============================================*/
+
+var imgBanner = $(".bannerEstatico img");
+var slideBanner = $(".slideBanner");
+var tituloBanner = $(".bannerEstatico h1");
+var descripcionBanner = $(".bannerEstatico p");
+
+
+for(var i = 0; i < imgBanner.length; i++){
+
+	$(slideBanner).append("<li></li>");
+
+	var itemSlideBanner = $(".slideBanner li");
+
+	$(imgBanner[i]).appendTo($(itemSlideBanner[i]));
+	$(imgBanner[i]).addClass("img-fluid");
+
+	$(imgBanner[i]).before('<div class="d-none d-md-block textoBanner"></div>');
+
+	var textoBanner = $(".textoBanner");
+
+	$(tituloBanner[i]).appendTo($(textoBanner[i]));
+
+	$(descripcionBanner[i]).appendTo($(textoBanner[i]));
+
+}
+
+$(".fade-slider").jdSlider({
+
+	isSliding: false,
+	isAuto: true,
+	isLoop: true,
+	isDrag: false,
+	interval:5000,
+	isCursor: false,
+	speed:3000
+
+});
+
+var alturaBanner = $(".fade-slider").height();
+
+$(".bannerEstatico").css({"height":alturaBanner+"px"})

@@ -1,34 +1,34 @@
-<div class="bannerEstatico"></div>
+<div class="bannerEstatico">
+
+<?php
+
+$args = array(
+
+		'post_type' => 'banner',
+		'orderby' => 'title',
+		'order' => 'ASC',
+		'category_name' => 'index'
+
+	);
+
+$banner = new WP_Query($args);
+
+while($banner->have_posts()): $banner->the_post();
+
+?>
+
+<?php the_post_thumbnail();?>
+
+<?php endwhile; wp_reset_postdata(); ?>
+
+</div>
 
 <section class="jd-slider fade-slider">
 	
 	<div class="slide-inner">
 		
-		<ul class="slide-area">
+		<ul class="slide-area slideBanner">
 			
-			<li>
-				
-				<img src="img/banner01.jpg" alt="Juanito Travel en el mar" class="img-fluid">
-
-			</li>
-
-			<li>
-				
-				<img src="img/banner02.jpg" alt="Juanito Travel en el mar" class="img-fluid">
-
-			</li>
-
-			<li>
-				
-				<img src="img/banner03.jpg" alt="Juanito Travel en el mar" class="img-fluid">
-
-			</li>
-
-			<li>
-				
-				<img src="img/banner04.jpg" alt="Juanito Travel en el mar" class="img-fluid">
-
-			</li>
 
 		</ul>
 
